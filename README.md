@@ -1,1 +1,1 @@
-# kivy_alarm_manager_with_service
+# Android alarm manager and service with Kivy
