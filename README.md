@@ -8,9 +8,7 @@ Iside your project locate PythonActivity.java it should be inside
 
 ```.buildozer/android/platform/python-for-android/pythonforandroid/bootstraps/sdl2/build/src/main/java/org/kivy/android/PythonActivity.java```
 
-and replace it with one from java_scr folder, then add KivyAlarmReceiver.java to the same folder where PythonActivity.java is, then replace
-
-AndroidManifest.tmpl.xml 
+and replace it with one from java_scr folder, then add KivyAlarmReceiver.java to the same folder where PythonActivity.java is, then replace AndroidManifest.tmpl.xml 
 
 it should be inside ```.buildozer/android/platform/python-for-android/pythonforandroid/bootstraps/sdl2/build/templates/AndroidManifest.tmpl.xml``` with the one from java_scr folder
 
