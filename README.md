@@ -15,3 +15,5 @@ it should be inside ```.buildozer/android/platform/python-for-android/pythonfora
 then check buildozer.spec file or simply copy it.
 
 If you've alredy built some app before you should ```buildozer android clean``` before building your app again with this changes.
+
+Already built app is in the bin folder.
