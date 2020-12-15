@@ -3,6 +3,7 @@ from jnius import autoclass, cast
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.utils import platform
+from kivy.logger import Logger
 
 
 if platform == 'android':
@@ -27,10 +28,15 @@ FloatLayout:
         pos_hint: {'center': (.5, .6)}
         text: 'after how many minutes should be fired'
     Button:
-        pos_hint: {'center': (.5, .45)}
-        size_hint: .3, .1
-        text: 'start service'
+        pos_hint: {'center': (.3, .45)}
+        size_hint: .3, .075
+        text: 'schedule alarm'
         on_release: app.start_alarm(t.text)
+    Button:
+        text: 'stop service'
+        pos_hint: {'center': (.7, .45)}
+        size_hint: .3, .075
+        on_release: app.stop_service()
     Label:
         id: lbl
         pos_hint: {'center': (.5, .35)}
@@ -44,7 +50,10 @@ class Application(App):
         return Builder.load_string(KV)
 
     def start_alarm(self, min):
-        if not min:
+        try:
+            min = int(min)
+        except Exception:
+            Logger.info('Not a valid number: Minutes set to 1')
             min = 1
         context = mActivity.getApplicationContext()
         alarmSetTime = int(round(time.time() * 1000)) + 1000 * 60 * int(min)
@@ -57,6 +66,9 @@ class Application(App):
             AlarmManager, context.getSystemService(Context.ALARM_SERVICE))
         alarm.setExactAndAllowWhileIdle(
             AlarmManager.RTC_WAKEUP, alarmSetTime, pendingIntent)
+
+    def stop_service(self):
+        mActivity.stop_service()
 
 
 if __name__ == "__main__":
