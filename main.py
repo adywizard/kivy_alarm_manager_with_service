@@ -7,7 +7,6 @@ from kivy.utils import platform
 
 if platform == 'android':
     Intent = autoclass('android.content.Intent')
-    Context = autoclass('android.content.Context')
     KivyAlarmReceiver = autoclass('org.kivy.android.KivyAlarmReceiver')
     PythonActivity = autoclass('org.kivy.android.PythonActivity')
     mActivity = PythonActivity.mActivity
