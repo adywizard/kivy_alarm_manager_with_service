@@ -4,7 +4,7 @@ Simple demonstration of how to build an app using Andoid's alarm manager and ser
 
 ## How to?
 
-Iside your project locate PythonActivity.java it should be inside
+Inside your project locate PythonActivity.java it should be inside
 
 ```.buildozer/android/platform/python-for-android/pythonforandroid/bootstraps/sdl2/build/src/main/java/org/kivy/android/PythonActivity.java```
 
